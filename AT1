@@ -1,0 +1,101 @@
+# Assignment 1
+
+# Question 1
+scp -i 45542104.pem twain.txt ubuntu@ec2-54-252-166-44.ap-southeast-2.compute.amazonaws.com:
+ls
+sed -e 's/Huck/HucK/' twain.txt
+
+# Question 2
+vi userargument.py
+cat userargument.py
+chmod u+x userargument.py
+curl https://introcs.cs.princeton.edu/python/code/stdio.py>stdio.py
+python3 userargument.py python
+python3 userargument.py @!&^%
+python3 userargument.py 1234
+python3 userargument.py Bob
+userargument.py Bob
+python3 userargument.py Alice Bob
+
+# Question 3
+vi leapyear.py
+chmod u+x leapyear.py
+#!/usr/bin/python3
+
+year = int(input(' Choose a year: '))
+if (year % 4) == 0:
+    if (year % 100) == 0:
+        if (year % 400) == 0:
+            print('{0} is a leap year'.format(year))
+        else:
+            print('{0} is not a leap year'.format(year))
+    else:
+        print('{0} is not a leap year'.format(year))
+else:
+    print('{0} is not a leap year'.format(year))
+# Testing:
+./leapyear.py
+1000
+./leapyear.py
+1996
+./leapyear.py
+2000
+
+# Question 4
+vi q4.py
+chmod u+x q4.py
+#!/usr/bin/python3
+
+import random as rd
+import sys
+
+a = int(sys.argv[1])
+b = int(sys.argv[2])
+
+x = rd.randint(a,b)
+print('answer:{0}'.format(x))
+# Testing:
+./q4.py 8 24
+./q4.py 8 24
+
+# Question 5
+vi q5.py
+chmod u+x q5.py
+#!/usr/bin/python3
+
+import sys
+m = int(sys.argv[1])
+d = int(sys.argv[2])
+if m == 4 or m == 5:
+    if m == 3 and d >= 20:
+        if m == 6 and d <= 20:
+            print("True")
+        else:
+            print("False")
+    else:
+        print("False")
+else:
+    print("False")
+# Testing:
+./q5.py 5 20
+./q5.py 6 11
+./q5.py 7 24
+./q5.py 12 8
+./q5.py 11 30
+
+# Question 6
+vi q6.py
+#!/usr/bin/python3
+import math
+import sys
+
+t = int(sys.argv[1]) # t is the number of years
+P = int(sys.argv[2]) # P is the Principal
+r = float(sys.argv[3]) # r is the annual interest rate
+
+wealth = round(P * math.exp(t*r),2)
+
+print('answer:{0}'.format(wealth))
+# Testing:
+./q6.py 3 100 0.08
+./q6.py 5 1000 0.07
