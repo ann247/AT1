@@ -67,15 +67,14 @@ import sys
 m = int(sys.argv[1])
 d = int(sys.argv[2])
 if m == 4 or m == 5:
-    if m == 3 and d >= 20:
-        if m == 6 and d <= 20:
-            print("True")
-        else:
-            print("False")
-    else:
-        print("False")
+     print("True")
+elif m == 3 and d >= 20:
+     print("True")
+elif m == 6 and d <= 20:
+     print("True")
 else:
     print("False")
+
 # Testing:
 ./q5.py 5 20
 ./q5.py 6 11
